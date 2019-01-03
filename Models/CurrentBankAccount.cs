@@ -35,5 +35,25 @@ namespace Models
                CurrentBalance -= 10;
                return true;
           }
+
+          public override bool DeactivateAccount(string accountNumber)
+          {
+               if (string.IsNullOrEmpty(accountNumber))
+               {
+                    return false;
+               }
+               CurrentBalance -= 100;
+               return true;
+          }
+
+          public override bool ActivateAccount(string accountNumber)
+          {
+               if (string.IsNullOrEmpty(accountNumber))
+               {
+                    return false;
+               }
+               CurrentBalance -= 500;
+               return true;
+          }
      }
 }

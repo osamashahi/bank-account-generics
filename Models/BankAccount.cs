@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Models
 {
-    public class BankAccount
+    public abstract class BankAccount
     {
 
           public BankAccount()
@@ -81,5 +81,8 @@ namespace Models
                CurrentBalance += amount;
                return true;
           }
+
+          public abstract bool DeactivateAccount(string accountNumber);
+          public abstract bool ActivateAccount(string accountNumber);
      }
 }

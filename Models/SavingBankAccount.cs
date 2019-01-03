@@ -22,7 +22,7 @@ namespace Models
                {
                     return false;
                }
-               CurrentBalance -= 10;
+               CurrentBalance -= (0.01 / 100) * amount;
                return true;
           }
 
@@ -32,7 +32,27 @@ namespace Models
                {
                     return false;
                }
-               CurrentBalance -= 10;
+               CurrentBalance -= (0.01 / 100) * amount;
+               return true;
+          }
+
+          public override bool DeactivateAccount(string accountNumber)
+          {
+               if (string.IsNullOrEmpty(accountNumber))
+               {
+                    return false;
+               }
+               CurrentBalance -= 100;
+               return true;
+          }
+
+          public override bool ActivateAccount(string accountNumber)
+          {
+               if (string.IsNullOrEmpty(accountNumber))
+               {
+                    return false;
+               }
+               CurrentBalance -= 500;
                return true;
           }
      }
